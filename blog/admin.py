@@ -1,5 +1,11 @@
 from django.contrib import admin
-from .import models
+from .models import Blog
 # Register your models here.
 
-admin.site.register(models.Blog)
+#@admin.register(BlogType)
+#class BlogTypeAdmin(admin.ModelAdmin):
+    #list_display = ('id', 'type_name')
+
+@admin.register(Blog)
+class BlogAdmin(admin.ModelAdmin):
+    list_display = ('title', 'date')

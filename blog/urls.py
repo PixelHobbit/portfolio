@@ -18,4 +18,5 @@ from django.urls import path
 from . import views
 urlpatterns = [
     path('', views.blog_page),
+    path('<int:blogs_id>/', views.blog_text),
 ]

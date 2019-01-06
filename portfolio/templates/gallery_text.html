@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <title>home</title>
 {% load staticfiles %}
-<link rel="stylesheet" href="{% static "blog.css" %}">
+<link rel="stylesheet" href="{% static "blog_text.css" %}">
 </head>
 <body>
 		<!--	nav start -->
 	<div class="section" id="nav">
 		<ul>
-			<li><a href="..">Home</a></li>
-			<li><a href="/blog" class="active">Blog</a></li>
+			<li><a href=".." class="active">Home</a></li>
+			<li><a href="/blog">Blog</a></li>
 			<li><a href="">Share</a></li>
 			<li><a href="">Views</a></li>
 			<li><a href="">Stars</a></li>
@@ -39,14 +39,12 @@
 	<!--	textblock start -->
 	<div class='main'>
 		<!--	blog start -->
-		{% for blogs in blogs.all %}
 		<div class="section" id='textblock'>
-			 <img src="{{blogs.image.url}}">
-			 <h3 style="margin-left: 50%;"><a href="{{ blogs.id }}">{{blogs.title}}</a></h3>
-			 <p style="float: none;">{{blogs.short_text}}</p>
-			 <p style="float: right;">{{blogs.date}}</p>
+			 <h1>{{gallery.title}}</h1>
+			 <img src="{{gallery.image.url}}">
+			 <p>{{gallery.text}}</p>
+			<!-- <p style="float: right;">{{blog.date}}</p>  -->
 		</div>
-		{% endfor %}
 		<!--	blog end -->
 	</div>
 	<!--	textblock end -->
